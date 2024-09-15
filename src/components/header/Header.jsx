@@ -2,7 +2,6 @@ import React from 'react'
 import Login from '../login/Login'
 import Register from '../register/Register'
 import { useNavigate } from 'react-router-dom'
-
 export default function Header() {
   const header = localStorage.getItem("token")
   const navigate = useNavigate('');

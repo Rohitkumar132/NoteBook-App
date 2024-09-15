@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../header/Header'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { apiBasedUrl } from '../../../const';
 
 export default function Register() {
     const [error , setError] = useState({
@@ -24,7 +25,7 @@ export default function Register() {
         };
 
         try {
-            const data = await axios.post('http://localhost:8080/api/users',payload);
+            const data = await axios.post(`${apiBasedUrl}/api/users`,payload);
             navigate("/login");
         } catch (error) {
             setError({ message: error.response.data.message, error: true })

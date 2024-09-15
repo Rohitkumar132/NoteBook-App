@@ -3,6 +3,7 @@ import Header from '../header/Header'
 import Todo from '../todo/Todo'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { apiBasedUrl } from '../../../const';
 
 export default function Dashboard() {
     const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ export default function Dashboard() {
     useEffect(() => {
         try {
             if(header){
-            axios.get('http://localhost:8080/api/get-todos', { headers: { Authorization: header } })
+            axios.get(`${apiBasedUrl}/api/get-todos`, { headers: { Authorization: header } })
                 .then((response) => {
                     setData(response.data.data);
                     // console.log(response)

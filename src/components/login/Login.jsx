@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../header/Header'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { apiBasedUrl } from '../../../const';
 export default function Login() {
     const navigate = useNavigate("")
     const [error, setError] = useState({
@@ -18,7 +19,7 @@ export default function Login() {
             password: password.current?.value,
         };
         try {
-            const data = await axios.post("http://localhost:8080/api/auth", payload);
+            const data = await axios.post(`${apiBasedUrl}/api/auth`, payload);
             localStorage.setItem("token", data.data.data);
             navigate("/home");
             // setError({message:data.data.message,error:true})

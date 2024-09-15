@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../header/Header'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { apiBasedUrl } from '../../../const';
 
 export default function AddTodo() {
     const [error, setError] = useState({
@@ -21,7 +22,7 @@ export default function AddTodo() {
         };
        
         try {
-            const data = await axios.post('http://localhost:8080/api/add-todo',payload, {headers: { Authorization: header}})
+            const data = await axios.post(`${apiBasedUrl}/api/add-todo`,payload, {headers: { Authorization: header}})
             navigate("/home")
         } catch (error) {
             setError({ message: error.response.data.message, error: true })

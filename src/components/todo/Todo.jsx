@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { apiBasedUrl } from '../../../const'
 
 export default function Todo(props) {
   const header = localStorage.getItem("token")
@@ -10,7 +11,7 @@ export default function Todo(props) {
       id: props.data._id
     }
   try {
-    axios.post('http://localhost:8080/api/delete-todo' , payload,  {headers: { Authorization: header}});
+    axios.post(`${apiBasedUrl}/api/delete-todo` , payload,  {headers: { Authorization: header}});
   } catch (error) {
     console.log(error);
   }
