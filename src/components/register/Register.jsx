@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../header/Header'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { apiBasedUrl } from '../../../const';
+import { apiBasedUrl } from '../../const';
 
 export default function Register() {
     const [error , setError] = useState({

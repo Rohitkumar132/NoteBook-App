@@ -4,7 +4,9 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import AddTodo from "./components/todo/AddTodo";
+
 function App() {
+ 
   return (
     <>
       <Routes>

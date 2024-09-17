@@ -1,1 +1,0 @@
-export const apiBasedUrl = "http://localhost8080"
